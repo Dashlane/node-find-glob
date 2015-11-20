@@ -1,0 +1,34 @@
+{
+  "name": "find-glob",
+  "version": "0.0.0",
+  "description": "Find files using extensive glob syntax",
+  "bin": "src/bin.js",
+  "scripts": {
+    "test": "strict-standard"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Dashlane/node-find-glob.git"
+  },
+  "keywords": [
+    "find",
+    "xargs",
+    "cli",
+    "glob"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dashlane/node-find-glob/issues"
+  },
+  "homepage": "https://github.com/Dashlane/node-find-glob#readme",
+  "devDependencies": {
+    "strict-standard": "^2.0.1"
+  },
+  "dependencies": {
+    "argparse": "^1.0.3",
+    "glob": "^6.0.1"
+  }
+}
