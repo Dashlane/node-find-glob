@@ -2,7 +2,7 @@
 'use strict'
 
 const argparse = require('argparse')
-const glob = require('glob')
+const globExpand = require('glob-expand')
 
 const pkg = require('../package.json')
 
@@ -16,10 +16,8 @@ args = args.parseArgs()
 
 const separator = args['0'] ? '\0' : '\n'
 
-args.pattern.forEach((pattern, patternIndex) => {
-  process.stdout.write(glob.sync(pattern).join(separator))
+process.stdout.write(globExpand(args.pattern).join(separator))
 
-  // UNIX find prints a trailing separator even with -print0:
-  // find src -print0 | tr '\0' Z
-  process.stdout.write(separator)
-})
+// UNIX find prints a trailing separator even with -print0:
+// find src -print0 | tr '\0' Z
+process.stdout.write(separator)

@@ -10,5 +10,5 @@ This replacement uses [`glob` package](https://www.npmjs.com/package/glob) synta
 find-glob '**/*.js'
 
 // Run eclint with all files you want to find
-find-glob -0 '!(node_modules)/**/*.(less|js|md)' | xargs -0 eclint
+find-glob -0 '**/*.js' '**/*.json' '!node_modules/**' | xargs -0 eclint
 ```

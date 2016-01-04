@@ -29,6 +29,6 @@
   },
   "dependencies": {
     "argparse": "^1.0.3",
-    "glob": "^6.0.1"
+    "glob-expand": "^0.1.0"
   }
 }
