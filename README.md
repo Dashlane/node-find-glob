@@ -12,3 +12,7 @@ find-glob '**/*.js'
 // Run eclint with all files you want to find
 find-glob -0 '**/*.js' '**/*.json' '!node_modules/**' | xargs -0 eclint
 ```
+
+## Options
+
+`-0` enables a null byte separator, to be used with `-0` in `xargs`.
