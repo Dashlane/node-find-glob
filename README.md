@@ -11,8 +11,15 @@ find-glob '**/*.js'
 
 // Run eclint with all files you want to find
 find-glob -0 '**/*.js' '**/*.json' '!node_modules/**' | xargs -0 eclint
+
+// Check if your codebase contains TODO notes:
+find-glob --contain 'TODO' --fail-on-empty '**/*.js'
 ```
 
 ## Options
 
 `-0` enables a null byte separator, to be used with `-0` in `xargs`.
+
+`--contain '^http:'` will filter only the files that contain the passed regular expression, which is run in multi-line mode by default, so `^` and `$` refer to a line begin and line end.
+
+`--fail-on-empty` will return an error code if no files have been found.
