@@ -1,3 +1,7 @@
+# v2.1.0
+
+New `--contain` and `--fail-on-empty` options.
+
 # v2.0.0
 
 Breaking change: patterns beginning with an exclamation mark.
