@@ -21,6 +21,10 @@ args.addArgument(['--fail-on-empty'], {
   action: 'storeTrue',
   help: 'Return 1 if no files have been found'
 })
+args.addArgument(['--fail-on-find'], {
+  action: 'storeTrue',
+  help: 'Return 1 if files have been found'
+})
 args = args.parseArgs()
 
 const contain = args.contain && new RegExp(args.contain, 'm')
@@ -34,4 +38,10 @@ process.stdout.write(files.join(separator))
 // find src -print0 | tr '\0' Z
 process.stdout.write(separator)
 
-process.exit(args.fail_on_empty && files.length === 0 ? 1 : 0)
+if(args.fail_on_empty) {
+  process.exit(files.length === 0 ? 1 : 0)
+} else if(args.fail_on_find) {
+  process.exit(files.length === 0 ? 0 : 1)
+} else {
+  process.exit(0)  
+}

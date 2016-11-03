@@ -14,6 +14,9 @@ find-glob -0 '**/*.js' '**/*.json' '!node_modules/**' | xargs -0 eclint
 
 // Check if your codebase contains TODO notes:
 find-glob --contain 'TODO' --fail-on-empty '**/*.js'
+
+// Check that your codebase does NOT contain TODO notes:
+find-glob --contain 'TODO' --fail-on-find '**/*.js'
 ```
 
 ## Options
@@ -23,3 +26,5 @@ find-glob --contain 'TODO' --fail-on-empty '**/*.js'
 `--contain '^http:'` will filter only the files that contain the passed regular expression, which is run in multi-line mode by default, so `^` and `$` refer to a line begin and line end.
 
 `--fail-on-empty` will return an error code if no files have been found.
+
+`--fail-on-find` will return an error code if files have been found.
