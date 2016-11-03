@@ -1,3 +1,7 @@
+# v2.2.0
+
+New `--fail-on-find` options.
+
 # v2.1.0
 
 New `--contain` and `--fail-on-empty` options.
